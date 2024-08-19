@@ -1,4 +1,4 @@
-number1_str, number2_str, number3_str = input("Enter three numbers separated by space: ").split()
+number1_str, number2_str, number3_str = input("Enter three numbers, separated by space: ").split()
 number1 = float(number1_str)
 number2 = float(number2_str)
 number3 = float(number3_str)
