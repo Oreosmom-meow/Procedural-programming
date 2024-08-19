@@ -1,12 +1,12 @@
-import random
-guess_number = input("Enter a number to start: ")
-right_number = random.randint(1,10)
-while int(guess_number) != right_number:
-    if int(guess_number) < right_number:
-        print("Too low")
-        guess_number = input("Continue: ")
-    elif int(guess_number) > right_number:
-        print("Too high")
-        guess_number = input("Continue:")
-if int(guess_number) == right_number:
-    print("Correct!")
+input_number = input("Enter a number: ")
+max_val = int(input_number)
+min_val = int(input_number)
+while input_number != "":
+    if int(input_number) > max_val:
+        max_val = int(input_number)
+    elif int(input_number) < min_val:
+        min_val = int(input_number)
+    input_number = input("Continue enter a number: ")
+if input_number == "":
+    print("The max number is " + str(max_val))
+    print("The min number is " + str(min_val))
