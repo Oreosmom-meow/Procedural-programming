@@ -10,4 +10,4 @@ elif number >= 4:
         else:
             print("The number is prime")
             break
-print(x)
+
