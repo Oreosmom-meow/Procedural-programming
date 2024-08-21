@@ -1,7 +1,5 @@
 list = []
-city = input("Enter a city: ")
-list.append(city)
-for x in range(4):
+for x in range(5):
     city = input("Enter a city: ")
     list.append(city)
 for x in list:
