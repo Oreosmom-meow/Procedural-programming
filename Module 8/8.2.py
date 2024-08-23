@@ -1,6 +1,6 @@
 import mysql.connector
 
-def get_screen_name(code):
+def get_airport_number(code):
     sql = f" select iso_country, type from airport where iso_country = '{code}' order by type "
     #print(sql)
     cursor = connection.cursor()
@@ -33,4 +33,4 @@ connection = mysql.connector.connect(
          )
 
 user_input = input("Enter a country code: ")
-get_screen_name(user_input)
+get_airport_number(user_input)
