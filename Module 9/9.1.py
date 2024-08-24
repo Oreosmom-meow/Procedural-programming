@@ -4,8 +4,8 @@ class car:
         self.max_speed = max_speed
         self.current_speed = 0
         self.trave_distance = 0
-    def print_value(self):
-        print(f"The new car has registration number of {self.regi_number}, max speed at {self.max_speed} km/h, current speed at {self.current_speed} km/h, travel distance of {self.trave_distance} km.")
+    #def print_value(self):
+        #print(f"The new car has registration number of {self.regi_number}, max speed at {self.max_speed} km/h, current speed at {self.current_speed} km/h, travel distance of {self.trave_distance} km.")
 
-new_car = car("ABC-123", "142",0, 0)
-new_car.print_value()       
+new_car = car("ABC-123", "142",12, 11)
+print(f"The new car has registration number of {new_car.regi_number}, max speed at {new_car.max_speed} km/h, current speed at {new_car.current_speed} km/h, travel distance of {new_car.trave_distance} km.")  
