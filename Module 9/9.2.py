@@ -1,36 +1,36 @@
-class car:
-    def __init__(self, regi_number, max_speed, current_speed, trave_distance):
+class Car:
+    speed = 0
+
+    def __init__(self, regi_number, max_speed, speed, trave_distance):
         self.regi_number = regi_number
         self.max_speed = max_speed
-        self.current_speed = 0
-        self.trave_distance = 0
+        self.speed = speed
+        Car.speed = self.speed
+        self.trave_distance = trave_distance
     def accelerate(self, change_of_speed):
         self.change_of_speed = change_of_speed
-        self.current_speed = self.current_speed + self.change_of_speed
-        return
-    def brake(self, change_of_speed):
-        if self.change_of_speed <= 0:
-            print("The car has stopped.")
-        return
-    def exceed(self, current_speed):
-        if int(self.current_speed) >= int(self.max_speed):
-            print("The cars has exceed max speed.")
+        Car.speed = self.change_of_speed + Car.speed
+        return Car.speed
+    def brake(self,change_of_speed):
+        self.change_of_speed = change_of_speed
+        Car.speed = self.change_of_speed
+        print(f'The car has been forced to stop at the speed of {Car.speed}')
         return
 
-new_car = car("ABC-123", "142",12, 11)
-print(f"The new car has registration number of {new_car.regi_number}, max speed at {new_car.max_speed} km/h, current speed at {new_car.current_speed} km/h, travel distance of {new_car.trave_distance} km.")  
+new_car = Car("ABC-123", "142",12, 11)
+print(f"The new car has registration number of {new_car.regi_number}, max speed at {new_car.max_speed} km/h, current speed at {new_car.speed} km/h, travel distance of {new_car.trave_distance} km.")
 
 new_speed = int(input("Please input number to accelerate the new car: "))
 if new_speed < 0:
     new_car.brake(new_speed)
 while new_speed >= 0:
-    if new_speed < 0:
-        new_car.brake(new_speed)
-        break
-    elif int(new_car.current_speed) >= int(new_car.max_speed):
-        new_car.exceed(new_car.current_speed)
+    print(f'---------------')
+    new_car.accelerate(new_speed)
+    if int(Car.speed) >= int(new_car.max_speed):
+        print(f"The current speed is {Car.speed} km/h.")
+        print("The cars has exceed max speed. Emegency brake activated.")
+        new_car.brake(-200)
         break
     else:
-        new_car.accelerate(new_speed)
-        print(f"The current speed is {new_car.current_speed} km/h.")
+        print(f"The current speed is {Car.speed} km/h.")
         new_speed = int(input("Please input number to accelerate the new car: "))
