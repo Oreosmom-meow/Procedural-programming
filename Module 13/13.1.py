@@ -15,7 +15,7 @@ def is_prime(number):
                     prime_status = False
                     break
         response = {
-            "number" : number,
+            "Number" : number,
             "isPrime" : prime_status
         }
         return response
