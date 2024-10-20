@@ -71,4 +71,4 @@ while new_race.race_finish == False:
     new_race.hour_passes()
     if new_race.race_finish == True:
         new_race.print_status()
-        break
+        break 
