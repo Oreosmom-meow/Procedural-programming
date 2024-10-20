@@ -28,4 +28,4 @@ class Magzine(Publication):
 magazine = Magzine('Donald Duck','Aki Hyyppä')
 book = Book('Compartment No. 6','Rosa Liksom', 192)
 magazine.print_information()
-book.print_information()
+book.print_information() 
